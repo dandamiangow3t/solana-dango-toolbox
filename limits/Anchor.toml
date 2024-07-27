@@ -5,7 +5,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-deployment_scripts = "Hi2qg8TLrcZTfSYAT9rPxHLzgVCsE8GsQ2rJ2hJcLBsW"
+limits = "GdxXitPMTzfiWJFqr8FwcT6aYdHpMEdMU7fEZecUL64D"
 
 [registry]
 url = "https://api.apr.dev"

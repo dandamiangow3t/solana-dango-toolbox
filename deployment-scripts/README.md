@@ -15,7 +15,7 @@ Define the `env` variables in `.env` file: `RPC_ENDPOINT` and `CLUSTER`
 Deploy the program
 
 ```bash
-yarn deploy
+yarn clean_deploy
 ```
 
 Runt the tests
@@ -46,7 +46,7 @@ I prefer doing a fresh deployment each time (i.e. the program having a new id).
 
 ### Solution
 
-To accomplish this, running `yarn deploy` will call first `bash clean_rebuild.sh` and then `bash deploy.sh`.
+To accomplish this, running `yarn clean_deploy` will call first `bash clean_rebuild.sh` and then `bash deploy.sh`.
 
 `clean_rebuild.sh` does the following:
 
