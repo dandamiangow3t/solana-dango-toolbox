@@ -8,7 +8,8 @@
     "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
     "op1": "ts-node src/op1_createMerkleTree.ts",
     "op2": "ts-node src/op2_mint.ts",
-    "op3": "ts-node src/op3_search.ts"
+    "op3": "ts-node src/op3_update.ts",
+    "op4": "ts-node src/op4_search.ts"
   },
   "dependencies": {
     "@coral-xyz/anchor": "0.30.1",

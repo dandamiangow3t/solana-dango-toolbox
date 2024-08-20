@@ -1,6 +1,6 @@
 import "dotenv/config";
 import MetaplexWrapper from "./MetaplexWrapper";
-import { BASE_URL, RPC_ENDPOINT } from "./config";
+import { BASE_URL, RPC_ENDPOINT, SOME_ID } from "./config";
 
 
 import * as leafOwner from "./wallets/leafOwner_9r9SpxK4sj79vRWJGCvbKYidTKCqU99Sf6aKRSKu8x97.json";
@@ -51,10 +51,10 @@ const searchAssetsInSeries = async (jsonBaseUri: string, maxInSeries: number  ) 
 (async () => {
   // await getAssetsByOwner()
 
-  await searchAssets(`${BASE_URL}/FMtZ8Rdk3mwa5TZha9eZ3cfJzzoxJMUBWJHkEjiBVZa9`)
+  // await searchAssets(`${BASE_URL}/${SOME_ID}`)
   
   let start = new Date().getTime()
-  await searchAssetsInSeries(`${BASE_URL}/FMtZ8Rdk3mwa5TZha9eZ3cfJzzoxJMUBWJHkEjiBVZa9`, 12)
+  await searchAssetsInSeries(`${BASE_URL}/${SOME_ID}`, 12)
   console.log("took %s ms", new Date().getTime() - start)
 
 })();

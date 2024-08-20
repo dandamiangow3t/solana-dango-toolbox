@@ -1,6 +1,6 @@
 import "dotenv/config";
 import MetaplexWrapper from "./MetaplexWrapper";
-import { BASE_URL, CLUSTER, RPC_ENDPOINT } from "./config";
+import { BASE_URL, CLUSTER, RPC_ENDPOINT, SOME_ID } from "./config";
 import { none, Pda, PublicKey, publicKey } from "@metaplex-foundation/umi";
 
 import { secret as creatorWallet } from "./wallets/creator_EgrThSSjpXdEDKLtYjwHs7BV5YyVHKidPedvSKyhXbqf.json";
@@ -48,15 +48,24 @@ const mintCNFT = async (name: string, symbol: string, uri: string) : Promise<{ a
 
 (async () => {
   
-  const MAX_MINTS = 12
-  for(let i = 0; i < MAX_MINTS; i++) {
+  // const MAX_MINTS = 12
+  // for(let i = 0; i < MAX_MINTS; i++) {
 
-    const { assetId, leafNonce, txSig } = await mintCNFT("Some CNFT", "XX", `${BASE_URL}/FMtZ8Rdk3mwa5TZha9eZ3cfJzzoxJMUBWJHkEjiBVZa9/${i}`)
-    console.table([
-      { name: "New mint", value: assetId },
-      { name: "Leaf nonce", value: leafNonce }
-    ])
-    console.log(`tx https://explorer.solana.com/tx/${txSig}?cluster=${CLUSTER}`)
-  } 
+  //   const { assetId, leafNonce, txSig } = await mintCNFT("Some CNFT", "XX", `${BASE_URL}/${SOME_ID}/${i}`)
+  //   console.table([
+  //     { name: "New mint", value: assetId },
+  //     { name: "Leaf nonce", value: leafNonce }
+  //   ])
+  //   console.log(`tx https://explorer.solana.com/tx/${txSig}?cluster=${CLUSTER}`)
+  // } 
+
+  const { assetId, leafNonce, txSig } = await mintCNFT("Petrus 1985", "VIN", `https://api.npoint.io/353b0f14a1bc63a351cb`)
+  console.table([
+    { name: "New mint", value: assetId },
+    { name: "Leaf nonce", value: leafNonce }
+  ])
+  console.log(`tx https://explorer.solana.com/tx/${txSig}?cluster=${CLUSTER}`)
+
+  
   
 })();

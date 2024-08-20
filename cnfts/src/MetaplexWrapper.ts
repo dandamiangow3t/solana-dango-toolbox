@@ -34,6 +34,7 @@ import {
   createSignerFromKeypair,
   generateSigner,
   keypairIdentity,
+  publicKey,
   some,
 } from "@metaplex-foundation/umi";
 import { LAMPORTS_PER_SOL, Transaction, PublicKey as Web3PublicKey } from "@solana/web3.js";
@@ -332,11 +333,12 @@ export default class MetaplexWrapper {
     }
   }
 
-  public async editUri(assetId: PublicKey, leafOwner: PublicKey, newUri: string): Promise<string> {
-    const assetWithProof = await getAssetWithProof(this.umi, assetId);
+  public async editUri(assetId: string, leafOwner: PublicKey, newUri: string): Promise<string> {
+    const assetWithProof = await getAssetWithProof(this.umi, publicKey(assetId));
     // Then we can use it to update metadata for the NFT.
     const updateArgs: UpdateArgsArgs = {
-      uri: some(newUri),
+      name: "Petrus 2025"
+      // uri: some(newUri),
     };
 
     const txResponse = await updateMetadata(this.umi, {
