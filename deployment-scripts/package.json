@@ -3,7 +3,7 @@
   "scripts": {
     "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
     "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
-    "clean_deploy": "bash ./clean_rebuild.sh && bash ./deploy.sh",
+    "clean_deploy": "bash ./program_close.sh && bash ./clean_rebuild.sh && bash ./deploy.sh",
     "test": "mocha -r ts-node/register -t 1000000 tests/**/*.spec.ts"
   },
   "dependencies": {
